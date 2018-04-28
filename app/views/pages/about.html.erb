@@ -1,0 +1,96 @@
+<h1><%= "T-Cal" %></h1>
+
+<!DOCTYPE html>
+<html class="trolling">
+    <head>
+        <title>Calculator</title>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/4.0.1/math.min.js"></script>
+    </head>
+    <body class="calculator">
+        <div id='calc-contain'>
+  
+          <form name="calculator" id = "calculator">
+            
+            <input type="text" name="answer" id = "answer"/>
+            <br>
+           
+            
+            <input type="button" value=" log " onclick="calculator.answer.value += 'log('" />
+            <input type="button" value=" ln " onclick="calculator.answer.value += 'ln('" />
+             <input type="button" value=" ( " onclick="calculator.answer.value += '('" />
+            <input type="button" value=" ) " onclick="calculator.answer.value += ')'" />
+           
+            </br>
+            
+            <input type="button" value=" sin " onclick="calculator.answer.value += 'sin('" />
+            <input type="button" value=" cos " onclick="calculator.answer.value += 'cos('" />
+            <input type="button" value=" tan " onclick="calculator.answer.value += 'tan('" />
+            <input type="button" value=" x! " onclick="calculator.answer.value += '!'" />
+            
+            </br>
+            
+            <input type="button" value=" √ " onclick="calculator.answer.value += '√(' " />
+            <input type="button" value=" e " onclick="calculator.answer.value += 'e^('" />
+            <input type="button" value=" π " onclick="calculator.answer.value += 'π'" />
+            <input type="button" value=" del " onclick="calculator.answer.value = del()" />
+
+            
+             </br>
+             
+            <input type="button" value=" 1 " onclick="calculator.answer.value += '1'" />
+            <input type="button" value=" 2 " onclick="calculator.answer.value += '2'" />
+            <input type="button" value=" 3 " onclick="calculator.answer.value += '3'" />
+            <input type="button" value=" + " onclick="calculator.answer.value += '+'" />
+            <br/>
+            
+            <input type="button" value=" 4 " onclick="calculator.answer.value += '4'" />
+            <input type="button" value=" 5 " onclick="calculator.answer.value += '5'" />
+            <input type="button" value=" 6 " onclick="calculator.answer.value += '6'" />
+            <input type="button" value=" - " onclick="calculator.answer.value += '-'" />
+            </br>
+          
+            <input type="button" value=" 7 " onclick="calculator.answer.value += '7'" />
+            <input type="button" value=" 8 " onclick="calculator.answer.value += '8'" />
+            <input type="button" value=" 9 " onclick="calculator.answer.value += '9'" />
+            <input type="button" value=" x " onclick="calculator.answer.value += 'x'" />
+            </br>
+            
+            <input type="button" value=" c " onclick="calculator.answer.value = ''" />
+            <input type="button" value=" 0 " onclick="calculator.answer.value += '0'" />
+            <input type="button" value=" = " onclick="calculator.answer.value = calculator1() "/>
+            <input type="button" value=" % " onclick="calculator.answer.value += '%'" />
+            </br>
+  
+    
+          </form>
+          <div id="agh">
+            <p>Troll tech
+          </div>
+        </div>
+    </body>
+</html>
+
+<script language="JavaScript">
+    function calculator1() {
+       
+        var x = document.getElementById("answer").value;
+        x = x.replace("ln(", "log(");
+        x = x.replace("log(", "log10(");
+        x = x.replace("√(", "sqrt(");
+        x = x.replace("x", "*");
+        x = x.replace("%", "/");
+        x = x.replace("π", "pi");
+        
+        return math.eval(x);
+    }
+    
+    function del(){
+        var x = document.getElementById("answer").value;
+        
+       return x.substring(0, x.length - 1);
+        
+    }
+    
+  </script>
+
+<script>
